@@ -1,0 +1,178 @@
+body {
+  font: 14px "Century Gothic", Futura, sans-serif;
+  background: white;
+  margin: 20px;
+}
+
+ol, ul {
+  padding-left: 30px;
+}
+
+.game-board {
+  margin-left: 30%;
+  margin-top: 120px;
+}
+
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.stroke {
+  margin-bottom: 2px;
+  height: 20px;
+  width: 20px;
+}
+
+.status {
+  margin-bottom: 10px;
+}
+
+.square {
+  background: #f2b457;
+  border: 2px solid black;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 30px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 30px;
+  animation-name: fadeOut;
+  animation-duration: 1s;
+}
+
+.square:focus {
+  outline: none;
+}
+
+.kbd-navigation .square:focus {
+  background: #ddd;
+}
+
+.game {
+  display: flex;
+  flex-direction: row;
+}
+
+.game-info {
+  margin-left: 20px;
+  margin-top: 120px;
+  animation-name: gameInfo;
+  animation-duration: 2s;
+}
+
+.title {
+  position:absolute;
+  margin-top: 40px;
+  margin-left: 42%;
+  font-size: 30px;
+  animation-name: title;
+  animation-duration: 3s;
+}
+
+@keyframes title {
+  0%    {
+    margin-left: -2000px; 
+   }
+  100%  {
+    margin-left: 40%;
+  }
+}
+
+@keyframes gameInfo {
+  0%   { margin-top: 1000px; }
+  100% { margin-top: 120px; }
+}
+
+@keyframes fadeOut {
+  0%    { 
+    border: 0px solid white;
+    margin-right: 25px;
+    margin-top: 25px;
+    background: white;
+  }
+}
+
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+  /* Styles */
+  body {
+  font: 14px "Century Gothic", Futura, sans-serif;
+  background: white;
+  margin: 20px;
+  }
+
+  ol, ul {
+    padding-left: 3px;
+  }
+
+  .game-board {
+    margin-left: 10px;
+    margin-top: 100px;
+  }
+
+  .board-row:after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+
+  .stroke {
+    margin-bottom: 10px;
+    height: 15px;
+    width: 15px;
+  }
+
+  .status {
+    margin-bottom: 10px;
+  }
+
+  .square {
+    background: #f2b457;
+    border: 2px solid black;
+    float: left;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 34px;
+    height: 21px;
+    margin-right: -1px;
+    margin-top: -1px;
+    padding: 0;
+    text-align: center;
+    width: 21px;    
+  }
+
+  .square:focus {
+    outline: none;
+  }
+
+  .kbd-navigation .square:focus {
+    background: #ddd;
+  }
+
+  .game {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .game-info {
+    position: absolute;
+    margin-left: 20px;
+    margin-top: 420px;
+  }
+
+  .title {
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 5%;
+    font-size: 30px;
+    animation-name: title;
+    animation-duration: 3s;
+  }
+}
