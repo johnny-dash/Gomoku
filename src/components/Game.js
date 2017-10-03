@@ -11,6 +11,8 @@ export default class Game extends React.Component {
     this.state = {
       history: [{
         squares: Array(225).fill(null),
+        latestMove: null,
+        turn : null
       }],
       stepNumber: 0,
       whitePlayerSteps: [],
@@ -39,6 +41,8 @@ export default class Game extends React.Component {
     this.setState({
       history: history.concat([{
         squares: squares,
+        latestMove: i,
+        turn: !this.state.xIsNext,
       }]),
       stepNumber: history.length,
       xIsNext: !this.state.xIsNext,
@@ -58,20 +62,22 @@ export default class Game extends React.Component {
     const winner  = calculateWinner(current.squares);
 
     const moves   = history.map((step, move) => {
-      const desc = move ? 'Move #' + move : 'Game start';
+      var x = step.latestMove % 15 + 1;
+      var y = Math.floor(step.latestMove / 15) + 1;
+      const desc = move ? (step.turn ? 'White' : 'Black') + ' move (' + x + ',' + y +')' : 'Game start';
       return (
         <li key={move}>
           <a href= '#' onClick={() => this.jumpTo(move)}>{desc}</a>
         </li>
       );
     });
-
-
+    
     let status;
     if(winner){
-      status    = 'Winner: ' + (this.state.xIsNext ? 'White Player' : 'Black Player');
+      status         = 'Winner: ' + (this.state.xIsNext ? 'White Player' : 'Black Player');
+      var cheers     = <div className='celebration'><div className='windowTitle'>{status}</div><div className="btn-custom"><a href="/">Play Again!</a></div></div>;  
     } else {
-      status    = 'Next player: ' + (this.state.xIsNext ? 'Black Player' : 'White Player');
+      status         = 'Next player: ' + (this.state.xIsNext ? 'Black Player' : 'White Player');
     }
 
     return(
@@ -89,6 +95,7 @@ export default class Game extends React.Component {
           <div>{ status }</div>
           <ol>{ moves }</ol>
         </div>
+        {cheers}
       </div>
     );
   }

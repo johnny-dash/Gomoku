@@ -1,7 +1,12 @@
 body {
   font: 14px "Century Gothic", Futura, sans-serif;
-  background: white;
+  background: #598987;
   margin: 20px;
+}
+
+a {
+    color: #FFFFFF;
+    text-decoration: none;
 }
 
 ol, ul {
@@ -75,6 +80,29 @@ ol, ul {
   animation-duration: 3s;
 }
 
+.celebration {
+  position: absolute;
+  background: #FF6670;
+  border-radius: 3px;
+  margin-left: 33%;
+  margin-top: 10%;
+  height: 200px;
+  width: 350px;
+}
+
+.windowTitle {
+  margin-left: 25px;
+  margin-top: 50px;
+  font-size: 30px;
+}
+
+.btn-custom {
+  margin-left: 120px;
+  margin-top: 40px;
+  font-size: 20px;
+}
+
+
 @keyframes title {
   0%    {
     margin-left: -2000px; 
@@ -99,12 +127,12 @@ ol, ul {
 }
 
 @media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 480px) {
+and (min-device-width : 200px) 
+and (max-device-width : 460px) {
   /* Styles */
   body {
   font: 14px "Century Gothic", Futura, sans-serif;
-  background: white;
+  background: #598987;
   margin: 20px;
   }
 
@@ -171,8 +199,28 @@ and (max-device-width : 480px) {
     position: absolute;
     margin-top: 10px;
     margin-left: 5%;
-    font-size: 30px;
-    animation-name: title;
-    animation-duration: 3s;
+    font-size: 30px;  
+  }
+
+  .celebration {
+    position: absolute;
+    background: #FF6670;
+    border-radius: 3px;
+    margin-left: 20px;
+    margin-top: 180px;
+    height: 150px;
+    width: 300px;
+  }
+
+  .windowTitle {
+    margin-left: 25px;
+    margin-top: 30px;
+    font-size: 25px;
+  }
+
+  .btn-custom {
+    margin-left: 100px;
+    margin-top: 35px;
+    font-size: 20px;
   }
 }
